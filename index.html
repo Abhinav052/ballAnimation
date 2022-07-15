@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ball Animation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0%;
+        padding: 0%;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #ball {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-image: linear-gradient(red 50%, yellow 50%);
+        transition: 1s;
+        animation: updown 1.5s linear infinite;
+      }
+      @keyframes updown {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-150px) rotate(180deg);
+        }
+        100% {
+          transform: translateY(0px) rotate(360deg);
+        }
+      }
+      .shadow {
+        width: 150px;
+        height: 30px;
+        border-radius: 50%;
+        animation: shadow 1.5s linear infinite;
+        background-color: grey;
+        opacity: 1;
+      }
+      @keyframes shadow {
+        0% {
+          transform: none;
+        }
+        50% {
+          transform: scale(0.5);
+          opacity: 0.2;
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="ball"></div>
+      <div class="shadow"></div>
+    </div>
+  </body>
+</html>
